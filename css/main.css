@@ -300,6 +300,7 @@ body {
   height: 250px;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 .coming-container .logocont img {
   width: 90%;
@@ -309,12 +310,10 @@ body {
 .coming-container .logocont .logowhite {
   position: absolute;
   animation: changelogo-reverse infinite 15s;
-  margin-top: -50px;
 }
 .coming-container .logocont .logodark {
   animation: changelogo infinite 15s;
   position: absolute;
-  margin-top: -50px;
 }
 .coming-container .typetext {
   font-family: madefont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -322,13 +321,35 @@ body {
   font-size: 4vh;
   min-height: 105px;
   padding: 0 20px;
+  width: 100%;
+  max-width: 500px;
 }
 
 @media (max-width: 768px) {
-  .typetext {
+  .coming-container {
+    background-image: url(/images/bg-coming-soon.svg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+  }
+  .coming-container .logocont {
+    align-items: end;
+  }
+  .coming-container .logocont img {
+    width: 90%;
+    max-width: 495px;
+    height: auto;
+  }
+  .coming-container .logocont .logowhite {
+    margin-top: 0px;
+  }
+  .coming-container .logocont .logodark {
+    margin-top: 0px;
+  }
+  .coming-container .typetext {
     min-height: 200px !important;
     width: 100%;
-    font-size: 3vh;
+    font-size: 3vh !important;
   }
 }
 

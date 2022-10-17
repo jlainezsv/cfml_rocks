@@ -43,6 +43,7 @@ body {
         height: 250px;
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         img{
             width: 90%;
             max-width: 495px;
@@ -53,13 +54,13 @@ body {
             //background: url("/images/logo.svg");
             position: absolute;
             animation:changelogo-reverse infinite 15s;
-            margin-top: -50px;
+            // margin-top: -50px;
         }
         .logodark{
             //background: url("/images/logo-dark.svg");
             animation:changelogo infinite 15s;
             position: absolute;
-            margin-top: -50px;
+            // margin-top: -50px;
         }
 
         // &:before{
@@ -82,14 +83,40 @@ body {
         font-size: 4vh;
         min-height:105px;
         padding: 0 20px;
-    
+        width: 100%;
+        max-width: 500px;
     }
 }
 
 @media (max-width:768px) {
-    .typetext{
-        min-height:200px !important;
-        width: 100%;
-        font-size: 3vh;
+    
+    .coming-container{
+        background-image: url(/images/bg-coming-soon.svg);
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+    
+        .logocont{
+            align-items: end;
+            img{
+                width: 90%;
+                max-width: 495px;
+                height: auto;
+                
+            }
+            .logowhite{
+                margin-top: 0px;
+            }
+            .logodark{
+                margin-top: 0px;
+            }
+    
+    
+        }
+        .typetext{
+            min-height:200px !important;
+            width: 100%;
+            font-size: 3vh !important;
+        }
     }
 }
