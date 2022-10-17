@@ -1,0 +1,45 @@
+@mixin transition {
+    transition: transform 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, background-image 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, display 0.15s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    transition:  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+@mixin ico-bg-svg($ico-url, $display: block, $position: center center, $bg-color) {
+    -webkit-mask: $ico-url no-repeat $position;
+    mask: $ico-url no-repeat center center;
+    background-color: $bg-color;
+    display: $display;
+    
+}
+
+@mixin ico-hover-svg($ico-url, $size: 24px, $width: 25px, $height:25px, $display: block, $bg-color: #fff, $position: left center, $bg-hover, $margin: 0 5px 0 0) {
+    -webkit-mask: $ico-url no-repeat $position;
+    mask: $ico-url no-repeat left center;
+    -webkit-mask-size: $size;
+    mask-size: $size;
+    background-color: $bg-color;
+    display: $display;
+    width: $width;
+    height: $height;
+    margin: $margin;
+    &:hover {
+        background-color: $bg-hover;
+    }
+}
+@mixin icon-navaction($ico-url, $width: 24px, $height:24px, $size: inherit, $display: block, $bg-color: var(--or-midGray), $position: center center, $bg-hover: var(--white), $margin: 0 5px 0 0) {
+    -webkit-mask: $ico-url no-repeat $position;
+    mask: $ico-url no-repeat left center;
+    -webkit-mask-size: $size;
+    mask-size: $size;
+    background-color: $bg-color;
+    display: $display;
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
+
+

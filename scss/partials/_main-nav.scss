@@ -1,0 +1,199 @@
+nav{
+    //display: flex;
+    flex-direction: row;
+    padding: 2px 20px;
+    justify-content: space-between;
+    //background: var(--white);
+    align-items: center;
+    height: 40px;
+    .nav-menu{
+        padding: 0px;
+        //display: inline-flex;
+        list-style: none;
+        margin: 0px;
+        gap: 10px;
+        li{
+            a{
+                display: flex;
+                padding: 6px 13px;
+                color: var(--or-midGray) !important;
+                text-decoration: none;
+                height: 44px;
+                border-color: var(--white);
+                align-items: center;
+                border-bottom: 4px solid transparent;
+                border-top: 4px solid transparent;
+                &:hover{
+                    border-bottom: 4px solid var(--or-green);
+                }
+            }
+            a.btn-home{
+                padding: 12px;
+            }
+            a.active{
+                border-bottom: 4px solid var(--or-green);
+            }
+            .dropdownitem{
+                display: flex;
+                gap: 3px;
+                .ico-chevron-down{
+                    @include icon-navaction(
+                        $ico-url: url(/images/icons/ico-chevron-down.svg),
+                        $width:20px,
+                        $height:20px,
+                        $margin: 0px !important
+                    );
+                }
+                i{
+                    @include transition();
+                    
+                }
+               
+            }
+            .dropdownlist{
+                //background-color: var(--white);
+                a{
+                    border: 0px;
+                }
+            }
+            
+            .dropdownitem.active{
+                i{
+                    transform: rotate(180deg);
+                    @include transition();
+                    
+                }
+            }
+        }
+    }
+
+
+    .nav-actions{
+        //display: inline-flex;
+        gap: 20px;
+        .actions-container{
+            border-left: 1px solid var(--or-lightGray);
+            border-right: 1px solid var(--or-lightGray);
+            padding: 0px 20px;
+            display: inline-flex;
+            gap:15px;
+            a{
+                display: block;
+                width: 24px;
+                height: 24px;
+                border-radius: 4px;
+                &:hover{
+                    background-color: var(--or-green);
+                    i{
+                        background-color: var(--white);
+                    }
+                }
+            }
+        }
+    }
+
+    .theme-switch{
+        .theme-icon{
+            background: #fff url(/images/icons/ico-theme-light.svg) center center no-repeat;
+            background-size: 70%;
+        }
+        .translate-x-5.theme-icon{
+            background:  url(/images/icons/ico-theme-dark.svg) center center no-repeat;
+            background-size: 70%;
+            background-color:#142150;
+        }
+    }
+}
+
+.navlogo{
+    @include icon-navaction($ico-url: url(/images/or-brandsite.svg), $width:100%,$bg-color: var(--or-midGray));
+    max-width: 195px;
+    &:hover{
+        background-color: var(--or-green);
+    }
+}
+
+.mobile-nav-container{
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    .mobile-nav{
+        height: 60px;
+        background: var(--white);
+        button{
+            border: 0px;
+            background-color: #fff;
+            color: var(--or-midGray)
+        }
+        
+    }
+    .mobile-menu{
+        width: 100%;
+        max-width: 600px;
+        nav{
+            padding: 20px;
+            height: calc(100vh - 60px);
+            background: rgba($color: #082766, $alpha: 0.89);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+           
+            .menuitem{
+                color: var(--white) !important;
+                font-size: 18px;
+                border-radius: 12px;
+            }
+            .menuitem:hover{
+                color: var(--or-Blue);
+                background-color: var(--white);
+            }
+            .dropdownitem.active{
+                background-color: var(--white);
+                color: var(--or-darkBlue) !important;
+            }
+            .nav-actions{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .actions-container{
+                    border: 0;
+                    a{
+                        width: 40px;
+                        height: 40px;
+                        i{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        .action-source-control{
+                            @include icon-navaction($ico-url: url(/images/icons/ico-source-control.svg), $size: 45%, $width: 40px, $height:40px, $bg-color: var(--white));
+                        }
+                        .action-contact{
+                            @include icon-navaction($ico-url: url(/images/icons/ico-mail.svg), $size: 60%, $width: 40px, $height:40px, $bg-color: var(--white));
+                        }
+                        .action-search{
+                            @include icon-navaction($ico-url: url(/images/icons/ico-search.svg), $size: 60%, $width: 40px, $height:40px, $bg-color: var(--white));
+                        }
+                    }
+                    
+                }
+                .theme-switch{
+                    height: 40px;
+                    width: 70px;
+                    padding: 3px;
+                    .theme-icon{
+                        width: 30px;
+                        height: 30px;
+                        
+                    }
+                    .translate-x-8.theme-icon{
+                        background: #142150 url(/images/icons/ico-theme-dark.svg) center center no-repeat;
+                        background-size: 70%;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+

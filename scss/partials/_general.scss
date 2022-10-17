@@ -1,0 +1,33 @@
+body {
+    --or-green: #8FC73E;
+    --or-light-green:#CCFA7D;
+    --or-darkBlue:#082766;
+    --or-Blue:#0F347E;
+    --or-midBlue:#007FAA;
+    --or-lightBlue:#3B95FF;
+    --or-darkGray:#575757;
+    --or-midGray:#6F6F6F;
+    --or-lightGray:#D8D8D8;
+    --black:#000000;
+    --white:#ffffff;
+}
+body.dark-mode{
+    //--or-green: red;
+    --or-light-green:#CCFA7D;
+    --or-darkBlue:#082766;
+    --or-Blue:#0F347E;
+     --or-midBlue:#007FAA;
+    --or-lightBlue:#3B95FF;
+    --or-darkGray:#575757;
+    --or-midGray:#FFF;
+    --or-lightGray:#D8D8D8;
+    --black:#000000;
+    --white:#0A162E;
+}
+
+.bg-ortus-green{background-color:var(--or-green)}
+// Fonts
+@font-face {
+    font-family: 'madefont';
+    src: url('/src/fonts/madefont.woff2');
+}
